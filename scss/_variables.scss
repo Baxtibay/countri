@@ -1,9 +1,12 @@
 // COLORS
-$color-primary: oranged;
-$bg-light-color: #f2f2f2;
-$bg-dark-color: #202C36;
+:root {
+  --body-bg: #f2f2f2;
+  --element-bg: #fff;
+  --text-color: #111517;
+}
+$bg-dark: #202C36;
 $light-black: #2B3844;
-$black: #111517;
+$element-bg: #fff;
 
 // FONTS
-$nunito-sans: "Nunito Sans 10pt", "Arial", sans-serif;
+$font-stack: "Nunito Sans 10pt", "Arial", sans-serif;
