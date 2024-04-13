@@ -1,3 +1,9 @@
+:root {
+  --body-bg: #f2f2f2;
+  --element-bg: #fff;
+  --text-color: #111517;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -309,6 +315,34 @@ template {
 }
 
 /*FONTS*/
+@font-face {
+  font-family: "Nunito Sans 10pt";
+  src: url("../fonts/NunitoSans10pt-Regular.woff2") format("woff2"), url("../fonts/NunitoSans10pt-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito Sans 10pt";
+  src: url("../fonts/NunitoSans10pt-SemiBold.woff2") format("woff2"), url("../fonts/NunitoSans10pt-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito Sans 10pt";
+  src: url("../fonts/NunitoSans10pt-ExtraBold.woff2") format("woff2"), url("../fonts/NunitoSans10pt-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito Sans 10pt";
+  src: url("../fonts/NunitoSans10pt-Light.woff2") format("woff2"), url("../fonts/NunitoSans10pt-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 /*GENERAL*/
 html {
   box-sizing: border-box;
@@ -328,16 +362,25 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Poppins", "Arial", sans-serif;
+  font-family: "Nunito Sans 10pt", "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background-color: #fff;
-  color: #000;
+  background-color: var(--body-bg);
+  color: var(--text-color);
+}
+body {
+  transition: all 0.3s ease;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+.dark-mode {
+  --body-bg: #202C36;
+  --element-bg: #2B3844;
+  --text-color: #fff;
 }
 
 /*VISUALLY-HIDDEN*/
@@ -355,9 +398,80 @@ img {
 /*CONTAINER*/
 .container {
   width: 100%;
-  max-width: 1064px;
+  max-width: 1328px;
   padding-left: 24px;
   padding-right: 24px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.site-haeder {
+  padding-top: 23px;
+  padding-bottom: 23px;
+  background-color: var(--element-bg);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+}
+.site-haeder {
+  transition: all 0.3s ease;
+}
+
+.site-header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header__logo {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+.site-header__logo:hover {
+  opacity: 0.7;
+}
+.site-header__logo:active {
+  opacity: 0.6;
+}
+
+.site-header__dark-mode-button {
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.site-header__dark-mode-button:hover {
+  opacity: 0.7;
+}
+.site-header__dark-mode-button:active {
+  opacity: 0.6;
+}
+
+.site-header__button-inner {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__theme-toggler-icon {
+  margin-right: 8px;
+}
+
+@media only screen and (max-width: 500px) {
+  .site-header__logo-link {
+    font-size: 18px;
+  }
+  .site-header__dark-mode-button {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .site-header__logo-link {
+    font-size: 14px;
+  }
+  .site-header__dark-mode-button {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=main.css.map */
