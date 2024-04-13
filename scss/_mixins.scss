@@ -36,3 +36,18 @@
     @content;
   }
 }
+
+@mixin hover-active () {
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+@mixin transition () {
+  & {
+    transition: all 0.3s ease;
+  }
+}
