@@ -37,7 +37,7 @@
   }
 }
 
-@mixin hover-active () {
+@mixin hover-active {
   &:hover {
     opacity: 0.7;
   }
@@ -46,8 +46,12 @@
   }
 }
 
-@mixin transition () {
-  & {
-    transition: all 0.3s ease;
-  }
+@mixin transition {
+  transition: all 0.3s ease;
+}
+
+/*THEME-TOGGLER-MIXIN*/
+@mixin theme-toggler{
+  color: var(--text-color);
+  background-color: var(--element-bg);
 }

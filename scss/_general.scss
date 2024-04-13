@@ -37,3 +37,17 @@ img {
   --element-bg: #{$light-black};
   --text-color: #{$element-bg};
 }
+
+
+/*MAIN*/
+.main-content {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+@include breakpoint-down(768px) {
+  .main-content {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}

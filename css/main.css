@@ -4,6 +4,7 @@
   --text-color: #111517;
 }
 
+/*THEME-TOGGLER-MIXIN*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -367,8 +368,6 @@ body {
   line-height: 1.5;
   background-color: var(--body-bg);
   color: var(--text-color);
-}
-body {
   transition: all 0.3s ease;
 }
 
@@ -383,6 +382,18 @@ img {
   --text-color: #fff;
 }
 
+/*MAIN*/
+.main-content {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-content {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
 /*VISUALLY-HIDDEN*/
 .visually-hidden {
   position: absolute;
@@ -408,11 +419,10 @@ img {
 .site-haeder {
   padding-top: 23px;
   padding-bottom: 23px;
-  background-color: var(--element-bg);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
-}
-.site-haeder {
   transition: all 0.3s ease;
+  color: var(--text-color);
+  background-color: var(--element-bg);
 }
 
 .site-header__container {
@@ -451,7 +461,7 @@ img {
 }
 
 .site-header__button-inner {
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 
@@ -473,5 +483,61 @@ img {
   }
   .site-header__dark-mode-button {
     font-size: 12px;
+  }
+}
+/*FILTERS*/
+.filters {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filters__icon {
+  position: absolute;
+  top: center;
+  left: 32px;
+  z-index: 1;
+}
+
+.filters__search-input {
+  min-width: 480px;
+  padding: 18px 74px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.06);
+  color: var(--text-color);
+  background-color: var(--element-bg);
+}
+
+.filters__region-select {
+  min-width: 200px;
+  padding: 18px 24px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
+  color: var(--text-color);
+  background-color: var(--element-bg);
+  transition: all 0.3s ease;
+  border-right: 20px solid var(--element-bg);
+}
+
+@media only screen and (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filters__icon {
+    top: 20px;
+    left: 32px;
+  }
+  .filters__search-input {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .filters__search-input {
+    min-width: 300px;
   }
 }/*# sourceMappingURL=main.css.map */
