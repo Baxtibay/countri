@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project</title>
+  <title>Countries</title>
   <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
@@ -22,6 +22,22 @@
     </div>
   </header>
 
+  <main class="main-content">
+    <div class="container">
+      <form class="filters" action="">
+        <svg class="filters__icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="currentColor" fill-rule="evenodd" d="M12.5 11h-.8l-.3-.3c1-1.1 1.6-2.6 1.6-4.2C13 2.9 10.1 0 6.5 0S0 2.9 0 6.5 2.9 13 6.5 13c1.6 0 3.1-.6 4.2-1.6l.3.3v.8l5 5 1.5-1.5-5-5ZM2 6.5C2 9 4 11 6.5 11S11 9 11 6.5 9 2 6.5 2 2 4 2 6.5Z" clip-rule="evenodd"/></svg>
+        <input class="filters__search-input" type="search" placeholder="Search for a country…">
+        <select class="filters__region-select" name="region" aria-label="Regions">
+          <option selected disabled>Filter by Region</option>
+          <option>Africa</option>
+          <option>America</option>
+          <option>Asia</option>
+          <option>Europe</option>
+          <option>Oceania</option>
+        </select>
+      </form>
+    </div>
+  </main>
   <script src="./js/main.js"></script>
 </body>
 </html>
