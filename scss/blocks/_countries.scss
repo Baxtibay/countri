@@ -1,0 +1,35 @@
+.countries__list {
+  @include list-unstyled;
+  display: grid;
+  grid-template-columns: repeat(4, 264px);
+  justify-content: space-around;
+  gap: 75px;
+}
+
+@include breakpoint-down(1328px) {
+  .countries__list {
+    grid-template-columns: repeat(4, 19.8%);
+    gap: 5.6%;
+  }
+}
+
+@include breakpoint-down(1090px) {
+  .countries__list {
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-between;
+    gap: 5%;
+  }
+}
+
+@include breakpoint-down(768px) {
+  .countries__list {
+    grid-template-columns: repeat(2, 45%);
+  }
+}
+
+@include breakpoint-down(460px) {
+  .countries__list {
+    grid-template-columns: repeat(1, 90%);
+    justify-content: center;
+  }
+}

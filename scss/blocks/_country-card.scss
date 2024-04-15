@@ -1,0 +1,42 @@
+.country__card {
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--element-bg);
+}
+
+.country__flag-img {
+  width: 100%;
+  display: inline-flex;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  object-fit: contain;
+}
+
+.country__about {
+  padding: 24px;
+}
+
+.country__name {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.country__details {
+  @include list-unstyled;
+}
+
+.country__details-item {
+  display: flex;
+}
+
+.country__definition-title {
+  margin-right: 4px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.country__definition-description {
+  @include list-unstyled;
+}
