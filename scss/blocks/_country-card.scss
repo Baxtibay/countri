@@ -33,10 +33,11 @@
 
 .country__definition-title {
   margin-right: 4px;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
 }
 
 .country__definition-description {
+  font-weight: lighter;
   @include list-unstyled;
 }
