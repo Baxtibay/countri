@@ -567,14 +567,13 @@ img {
 @media only screen and (max-width: 1328px) {
   .countries__list {
     grid-template-columns: repeat(4, 19.8%);
-    gap: 5.6%;
+    gap: 0.1%;
   }
 }
 @media only screen and (max-width: 1090px) {
   .countries__list {
     grid-template-columns: repeat(3, 30%);
     justify-content: space-between;
-    gap: 5%;
   }
 }
 @media only screen and (max-width: 768px) {
