@@ -1,0 +1,18 @@
+.not-found {
+  display: none;
+}
+
+.not-found.show {
+  display: block;
+}
+
+.not-found__inner {
+  display: flex;
+  justify-content: center;
+}
+
+.not-found__img {
+  display: block;
+  width: 600px;
+  height: 450px;
+}

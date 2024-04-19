@@ -3,6 +3,20 @@ const elButton = document.querySelector('.site-header__dark-mode-button')
 const elCountriesList = document.querySelector('.countries__list');
 // search input element
 const elSearchInput = document.querySelector('.filters__search-input');
+// loader
+const loader = document.querySelector('.loader-wrapper')
+// not-found
+const notFound = document.querySelector('.not-found')
+
+// universal show content function
+function showContent(content) {
+  content.classList.add('show')
+}
+
+// universal hide content function
+function hideContent(content) {
+  content.classList.remove('show')
+}
 
 // DARK MODE FUNCTION
 if(elButton) {
@@ -11,8 +25,7 @@ if(elButton) {
   })
 }
 // get data function
-function getData(data) {
-
+function generateHtml(data) {
   data.forEach(element => {
     const countryItem = document.createElement('li')
     countryItem.classList.add('countries__item')
@@ -42,20 +55,23 @@ function getData(data) {
   });
 }
 
-fetch('https://restcountries.com/v3.1/all', {
-  method: 'GET',
-  headers: {'Content-Type': 'application/json'},
-})
+function getCountries() {
+  showContent(loader)
+  fetch('https://restcountries.com/v3.1/all', {
+    method: 'GET',
+    headers: {'Content-Type': 'application/json'},
+  })
   .then(response => {return response.json()})
   .then(data => {
-    getData(data)
+    hideContent(loader)
+    generateHtml(data)
   })
   .catch(err => {
+    showContent(notFound)
     console.log('error', err);
   })
-  .finally(() => {
-    loaderWrapper.style.display = 'flex'
-  })
+}
+getCountries()
 
 
 // Search input function
