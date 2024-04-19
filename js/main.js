@@ -37,7 +37,11 @@ function generateHtml(data) {
         <dl class="country__details">
           <div class="country__details-item">
             <dt class="country__definition-title">Population:</dt>
-            <dd class="country__definition-description">${element.population}</dd>
+            <dd class="country__definition-description">${
+              element.population.toLocaleString(
+              undefined,
+              { minimumFractionDigits: 2 }
+            )}</dd>
           </div>
           <div class="country__details-item">
             <dt class="country__definition-title">Region:</dt>
