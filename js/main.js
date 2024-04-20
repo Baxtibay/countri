@@ -3,6 +3,8 @@ const elButton = document.querySelector('.site-header__dark-mode-button')
 const elCountriesList = document.querySelector('.countries__list');
 // search input element
 const elSearchInput = document.querySelector('.filters__search-input');
+// Select
+const filterByRegion = document.querySelector('.filters__region-select')
 // loader
 const loader = document.querySelector('.loader-wrapper')
 // not-found
@@ -26,40 +28,40 @@ if(elButton) {
 }
 // get data function
 function generateHtml(data) {
-  data.forEach(element => {
+  data.forEach(country => {
     const countryItem = document.createElement('li')
     countryItem.classList.add('countries__item')
     countryItem.innerHTML = `
-    <div class="country__card">
-      <img class="country__flag-img" src="${element.flags.svg}" alt="${element.flags.alt}" width="264" height="160">
+    <a class="country__card" href="/country-page.html?name=${country.name.common}">
+      <img class="country__flag-img" src="${country.flags.svg}" alt="${country.flags.alt}" width="264" height="160">
       <div class="country__about">
-        <h3 class="country__name">${element.name.common}</h3>
+        <h3 class="country__name">${country.name.common}</h3>
         <dl class="country__details">
           <div class="country__details-item">
             <dt class="country__definition-title">Population:</dt>
             <dd class="country__definition-description">${
-              element.population.toLocaleString(
+              country.population.toLocaleString(
               undefined,
               { minimumFractionDigits: 2 }
             )}</dd>
           </div>
           <div class="country__details-item">
             <dt class="country__definition-title">Region:</dt>
-            <dd class="country__definition-description regionName">${element.region}</dd>
+            <dd class="country__definition-description regionName">${country.region}</dd>
           </div>
           <div class="country__details-item">
             <dt class="country__definition-title">Capital:</dt>
-            <dd class="country__definition-description">${element.capital}</dd>
+            <dd class="country__definition-description">${country.capital}</dd>
           </div>
           </dl>
         </div>
-      </div>
+      </a>
     `
     elCountriesList.appendChild(countryItem)
   });
 }
 
-function getCountries() {
+function getCountries(e) {
   showContent(loader)
   fetch('https://restcountries.com/v3.1/all', {
     method: 'GET',
@@ -70,10 +72,12 @@ function getCountries() {
     hideContent(loader)
     generateHtml(data)
   })
-  .catch(err => {
-    showContent(notFound)
-    console.log('error', err);
-  })
+  .catch(err => showContent(notFound))
+
+  // TODO Must be done the filter select
+  // filterByRegion.addEventListener('change', (e) => {
+  //   console.log(filterByRegion.value)
+  // })
 }
 getCountries()
 

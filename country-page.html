@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country info</title>
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__container container">
+      <a class="site-header__logo" href="#">
+        Where in the world?
+      </a>
+      <button class="site-header__dark-mode-button" type="button">
+        <span class="site-header__button-inner">
+          <svg class="site-header__theme-toggler-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="17"><path fill="#fff" fill-rule="evenodd" stroke="currentColor" stroke-width="1.25" d="M12.553 11.815c-3.884 0-7.034-2.887-7.034-6.447 0-1.343.448-2.586 1.212-3.618C3.691 2.695 1.5 5.331 1.5 8.438c0 3.9 3.45 7.062 7.704 7.062 3.389 0 6.266-2.007 7.296-4.796a7.458 7.458 0 0 1-3.947 1.111Z" clip-rule="evenodd"/></svg>
+          Dark Mode
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content main-content--inner country-page">
+    <div class="container">
+      <div class="country-page__back-wrapper">
+        <a class="country-page__back-link" href="index.html">
+          <svg class="country-page__back-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="12"><path fill="currentColor" fill-rule="evenodd" d="m6.464.107 1.179 1.179-3.89 3.889h14.85v1.65H3.753l3.89 3.889-1.179 1.179L.572 6 6.464.107Z" clip-rule="evenodd"/></svg>
+          <span class="country-page__back-text">Back</span>
+        </a>
+      </div>
+
+      <!-- LOADER -->
+      <div class="loader-wrapper">
+        <div class="loader-inner">
+          <span class="loader"></span>
+          <span>Loading...</span>
+        </div>
+      </div>
+
+      <!-- COUNTRY-PAGE-FLAG-INFO -->
+      <div class="country-page__flag-info country">
+        <img class="country-page__flag" src="" alt="Country flag" width="560" height="400">
+        <div class="country__about">
+          <h3 class="country__name">Country name</h3>
+          <div class="country__position row">
+            <dl class="country__details">
+              <div class="country__details-item">
+                <dt class="country__definition-title">Native Name:</dt>
+                <dd class="country__definition-description native-name"></dd>
+              </div>
+              <div class="country__details-item">
+                <dt class="country__definition-title">Population:</dt>
+                <dd class="country__definition-description population-num"></dd>
+              </div>
+              <div class="country__details-item">
+                <dt class="country__definition-title">Region:</dt>
+                <dd class="country__definition-description region"></dd>
+              </div>
+              <div class="country__details-item">
+                <dt class="country__definition-title">Sub Region:</dt>
+                <dd class="country__definition-description sub-region"></dd>
+              </div>
+              <div class="country__details-item">
+                <dt class="country__definition-title">Capital:</dt>
+                <dd class="country__definition-description capital"></dd>
+              </div>
+            </dl>
+            <dl class="country__details">
+              <div class="country__details-item">
+                <dt class="country__definition-title">Top Level Domain:</dt>
+                <dd class="country__definition-description top-label-domain"></dd>
+              </div>
+              <div class="country__details-item">
+                <dt class="country__definition-title">Currencies:</dt>
+                <dd class="country__definition-description currency"></dd>
+              </div>
+              <div class="country__details-item">
+                <dt class="country__definition-title">Languages:</dt>
+                <dd class="country__definition-description languages"></dd>
+              </div>
+            </dl>
+          </div>
+          <section class="country-page__border-countries border-countries">
+            <h2 class="border-countries__heading">Border Countries: </h2>
+            <div class="border-countries__list">
+              <!-- <a class="border-countries__link" href="country-page.html" target="_blank">France</a>
+              <a class="border-countries__link" href="country-page.html" target="_blank">Germany</a>
+              <a class="border-countries__link" href="country-page.html" target="_blank">Netherlands</a> -->
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <script src="./js/country.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
