@@ -12,7 +12,9 @@ window.addEventListener('DOMContentLoaded', () => {
     topLabelDomain = countryPage.querySelector('.country__definition-description.top-label-domain'),
     currencies = countryPage.querySelector('.country__definition-description.currency'),
     languages = countryPage.querySelector('.country__definition-description.languages'),
-    borderCountriesList = countryPage.querySelector('.border-countries__list');
+    borderCountriesList = countryPage.querySelector('.border-countries__list'),
+    borderCountries = countryPage.querySelector('.country-page__border-countries');
+
 
   // universal show content function
   function showContent(content) {
@@ -24,10 +26,11 @@ window.addEventListener('DOMContentLoaded', () => {
     content.classList.remove('show')
   }
 
+  showContent(loader);
   fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
   .then((res) => res.json())
   .then(([country]) => {
-    console.log(country)
+    hideContent(loader)
     flagImg.src = country.flags.svg
     flagImg.alt = `This is a ${country.name.common}'s flag`
     countryNameH1.innerText = country.name.common
@@ -71,7 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
           borderCountryTag.innerText = borderCountry.name.common
           borderCountryTag.href = `country-page.html?name=${borderCountry.name.common}`
           borderCountryTag.target = '_blank'
-          borderCountriesList.append(borderCountryTag)
+          borderCountries.append(borderCountryTag)
         })
       })
     }

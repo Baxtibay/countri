@@ -1,9 +1,10 @@
 .country-page__border-countries {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .border-countries__heading {
-  padding-top: 10px;
   margin-top: 0;
   margin-bottom: 0;
   margin-right: 15px;
@@ -19,8 +20,10 @@
 }
 
 .border-countries__link {
+  flex-grow: 1;
   min-width: 96px;
   margin-top: 4px;
+  margin-right: 10px;
   margin-bottom: 4px;
   padding: 5px 10px;
   color: var(--text-color);
@@ -33,21 +36,6 @@
   @include hover-active;
   @include theme-toggler;
   @include transition;
-}
-
-.border-countries__link:not(:last-child) {
-  margin-right: 10px;
-}
-
-@include breakpoint-down(1150px) {
-  .country-page__border-countries {
-    flex-direction: column;
-    align-items: start;
-  }
-  .border-countries__heading {
-    margin-right: 0;
-    margin-bottom: 16px;
-  }
 }
 
 @include breakpoint-down(980px) {
