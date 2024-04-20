@@ -61,32 +61,37 @@ function generateHtml(data) {
   });
 }
 
-function getCountries(e) {
+showContent(loader)
+fetch('https://restcountries.com/v3.1/all', {
+  method: 'GET',
+  headers: {'Content-Type': 'application/json'},
+})
+.then(response => {return response.json()})
+.then(data => {
+  hideContent(loader)
+  generateHtml(data)
+})
+.catch(err => showContent(notFound))
+
+// filter select function
+filterByRegion.addEventListener('change', (e) => {
+  elCountriesList.innerHTML = ''
   showContent(loader)
-  fetch('https://restcountries.com/v3.1/all', {
-    method: 'GET',
-    headers: {'Content-Type': 'application/json'},
-  })
+  fetch(`https://restcountries.com/v3.1/region/${filterByRegion.value}`)
   .then(response => {return response.json()})
   .then(data => {
+    console.log(data)
     hideContent(loader)
     generateHtml(data)
   })
   .catch(err => showContent(notFound))
-
-  // TODO Must be done the filter select
-  // filterByRegion.addEventListener('change', (e) => {
-  //   console.log(filterByRegion.value)
-  // })
-}
-getCountries()
+})
 
 
 // Search input function
 if(elSearchInput) {
   const countryName = document.getElementsByClassName('country__name')
   elSearchInput.addEventListener('input', e => {
-    // e = preventDefault()
 
     Array.from(countryName).forEach(country => {
       if(country.innerText.toLowerCase().includes(elSearchInput.value.toLowerCase())) {
