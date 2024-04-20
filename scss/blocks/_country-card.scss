@@ -1,7 +1,20 @@
 .country__card {
   width: 100%;
+  display: block;
   border-radius: 5px;
+  text-decoration: none;
+  color: var(--text-color);
   background-color: var(--element-bg);
+  transition: translateY, 0.3s ease;
+}
+
+.country__card:hover {
+  box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.6);
+  transform: translateY(-10px);
+}
+
+.country__card:active {
+  transform: translateY(5px);
 }
 
 .country__flag-img {
@@ -13,7 +26,10 @@
 }
 
 .country__about {
+  width: 100%;
   padding: 24px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .country__name {
@@ -22,13 +38,33 @@
   font-weight: 800;
   font-size: 18px;
 }
+.country__position {
+  margin-bottom: 70px;
+}
+.country__position.row {
+  display: flex;
+  justify-content: space-between
+}
+
+.country__position.col {
+  display: flex;
+  flex-direction: column
+}
 
 .country__details {
   @include list-unstyled;
 }
 
+.country__details:not(:last-child) {
+  margin-right: 8px;
+}
+
 .country__details-item {
   display: flex;
+}
+
+.country__details-item:not(:last-child) {
+  margin-bottom: 8px;
 }
 
 .country__definition-title {
@@ -38,6 +74,12 @@
 }
 
 .country__definition-description {
-  font-weight: lighter;
+  font-weight: 300;
   @include list-unstyled;
+}
+
+@include breakpoint-down(1150px) {
+  .country__position {
+    flex-direction: column;
+  }
 }

@@ -46,6 +46,10 @@ img {
   padding-bottom: 48px;
 }
 
+.main-content--inner {
+  padding-top: 80px;
+}
+
 @include breakpoint-down(768px) {
   .main-content {
     padding-top: 24px;
